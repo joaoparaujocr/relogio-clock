@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600;700;800&family=Zen+Kurenaido&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Zen Kurenaido';
+}
+
+html, body {
+    height: 100%;
+    background-color: black;
+    padding: 0 5%;
+}
+
+.container{
+    max-width: 1000px;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container h1{
+    color: white;
+}
+
+.box-number{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 600px;
+    width: 100%;
+}
+
+.circle{
+    width: 90px;
+    height: 90px;
+    background-color: white;
+    font-size: 50px;
+    line-height: 80px;
+    text-align: center;
+    border-radius: 50%;
+    position: relative;
+}
+
+.box-time{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.str-time{
+    margin-top: 10px;
+    color: white;
+    font-size: 25px;
+}
+
+.glow::after, .glow::before{
+    content: '';
+    position: absolute;
+    background: linear-gradient(160deg, #e6fb04, #ff6600, #00ff66, #00ffff,
+    #ff00ff, #ff0099, #6e0dd0, #ff3300, #099fff);
+    width: calc(100% + 5px);
+    height: calc(100% + 5px);
+    background-size: 400%;
+    left: -2px;
+    top: -2px;
+    /* transform: translate(-50%, -50%); */
+    z-index: -1;
+    border-radius: 50%;
+    animation: animate 5.5s linear infinite;
+}
+
+.box-time:nth-child(2) .glow::after,
+.box-time:nth-child(2) .glow::before{
+    background: linear-gradient(160deg,#ff00ff, #ff0099, #6e0dd0, #ff3300, #099fff,
+     #e6fb04, #ff6600, #00ff66, #00ffff);
+    background-size: 400%;
+    animation: animate 5.5s linear infinite;
+}
+
+.box-time:nth-child(3) .glow::after,
+.box-time:nth-child(3) .glow::before{
+    background: linear-gradient(160deg, #00ffff,#ff00ff,  #ff6600,#6e0dd0, #ff0099, #099fff,
+     #e6fb04, #00ff66, #ff3300);
+    background-size: 400%;
+    animation: animate 5.5s linear infinite;
+}
+
+@keyframes animate {
+    100%{background-position: 400%;
+    transform: rotate(360deg);}
+}
+
+.glow::after{
+    filter: blur(5px);
+}
+
+@media screen and (max-width: 400px) {
+    .circle{
+        width: 60px;
+        height: 60px;
+        background-color: white;
+        font-size: 40px;
+        line-height: 60px;
+        text-align: center;
+    }
+    .str-time{
+        color: white;
+        font-size: 17px;
+    }
+}
