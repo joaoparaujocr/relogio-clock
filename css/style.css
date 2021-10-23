@@ -77,7 +77,7 @@ html, body {
     /* transform: translate(-50%, -50%); */
     z-index: -1;
     border-radius: 50%;
-    animation: animate 25s linear infinite;
+    animation: animate 20s linear infinite;
 }
 
 .box-time:nth-child(2) .glow::after,
